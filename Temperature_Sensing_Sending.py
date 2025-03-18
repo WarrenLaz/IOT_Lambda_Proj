@@ -1,15 +1,16 @@
 
 
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTShadowClient
-
+from dotenv import load_dotenv
 import random, time
-
+load_dotenv()
+import os
 # A random prog rammatic shadow client ID .
 
 SHADOW_CLIENT = "myShadowClient10"
 
 
-HOST_NAME = "a19nek02loc0yi-ats.iot.us-east-1.amazonaws.com"
+HOST_NAME = os.getenv('H_Name')
 
 # The relative path to the correct root CA file for &IoT;,# which ypu have already saved onto this device .
 
@@ -29,7 +30,7 @@ CERT_FILE = "certificate.pem.crt"
 
 # A programmatic shadow handler name prefix .
 
-SHADOW_HANDLER = "MyThingTest_1"
+SHADOW_HANDLER = "Temperature_and_Humidity_Sensor"
 
 # Automatically called whenever the shadow is updated .
 
